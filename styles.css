@@ -1,0 +1,36 @@
+.plotly .modebar-container {
+  display: none !important;
+}
+
+:root {
+  --bslib-sidebar-main-bg: #f8f8f8;
+  --bs-theme-color: #50817e;
+}
+
+.card-header {
+  color: white;
+  background: var(--bs-theme-color);
+}
+
+.card-body p{
+  font-weight: bold;
+}
+
+#recommendation1 {
+  font-weight : bold;
+  color: #50817e;
+  }
+#recommendation2 {
+    font-weight : bold;
+    color: #50817e;
+  }
+
+#recommendation3 {
+  font-weight : bold;
+  color: #50817e;
+  }
+
+#recommendation4 {
+  font-weight : bold;
+  color: #50817e;
+  }
