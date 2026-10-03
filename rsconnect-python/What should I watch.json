@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "C:\\Users\\loren\\OneDrive\\Desktop\\What should I watch",
+        "app_url": "https://lorenzoagabiti.shinyapps.io/choose_movie1/",
+        "app_id": 12742624,
+        "app_guid": null,
+        "title": "choose_movie1",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}

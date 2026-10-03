@@ -1,36 +1,177 @@
-.plotly .modebar-container {
-  display: none !important;
-}
-
 :root {
-  --bslib-sidebar-main-bg: #f8f8f8;
-  --bs-theme-color: #50817e;
+  --brand: #50817e;
+  --brand-dark: #3f6764;
+  --brand-soft: #e3eeed;
+  --gold: #b7791f;
+  --bslib-sidebar-main-bg: #f6f8f8;
 }
 
-.card-header {
-  color: white;
-  background: var(--bs-theme-color);
+[data-bs-theme="dark"] {
+  --brand: #6fa8a4;
+  --brand-dark: #85bbb7;
+  --brand-soft: #243735;
+  --gold: #e3b341;
+  --bslib-sidebar-main-bg: #14181a;
 }
 
-.card-body p{
-  font-weight: bold;
+.movie-card {
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-#recommendation1 {
-  font-weight : bold;
-  color: #50817e;
-  }
-#recommendation2 {
-    font-weight : bold;
-    color: #50817e;
-  }
+.movie-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
 
-#recommendation3 {
-  font-weight : bold;
-  color: #50817e;
-  }
+.movie-card .card-header {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+}
 
-#recommendation4 {
-  font-weight : bold;
-  color: #50817e;
-  }
+.poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--brand-soft);
+}
+
+.poster-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.card-info {
+  margin-top: 0.75rem;
+}
+
+.movie-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--brand);
+  line-height: 1.25;
+}
+
+.movie-meta, .movie-rating {
+  font-size: 0.9rem;
+  color: var(--bs-secondary-color);
+}
+
+.movie-rating {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.movie-rating span {
+  color: var(--bs-secondary-color);
+  font-weight: normal;
+}
+
+.badges {
+  margin-bottom: 0.5rem;
+}
+
+.badge-genre {
+  display: inline-block;
+  background: var(--brand-soft);
+  color: var(--brand);
+  border-radius: 999px;
+  padding: 1px 10px;
+  margin: 0 4px 4px 0;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+.stream {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stream-yes { color: #2f8f5b; }
+.stream-no { color: var(--bs-secondary-color); font-weight: normal; }
+
+/* clamp long overviews on the grid; the expand icon shows the full text */
+.overview {
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card[data-full-screen="true"] .overview {
+  -webkit-line-clamp: unset;
+  display: block;
+}
+
+.card[data-full-screen="true"] .poster {
+  max-width: 320px;
+}
+
+.credit {
+  font-size: 0.82rem;
+  color: var(--bs-secondary-color);
+  margin-bottom: 0.2rem;
+}
+
+.hint, .credit-note {
+  color: var(--bs-secondary-color);
+}
+
+.credit-note {
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 0.75rem;
+}
+
+.btn-row .btn {
+  flex: 1;
+}
+
+.btn-main {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.btn-main:hover {
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #fff;
+}
+
+.btn-alt {
+  background: transparent;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+}
+
+.btn-alt:hover {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+/* "Surprise me": one large centred card */
+.surprise-wrap {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .card-body { padding: 0.75rem; }
+  .poster { max-height: 360px; }
+}
